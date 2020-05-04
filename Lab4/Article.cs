@@ -91,9 +91,9 @@ namespace Lab4
         {
            writer.WriteStartElement("Article");
               _articleAuthor.WriteXml(writer);
-               writer.WriteElementString("Title", Title);
-               writer.WriteElementString("PagesNumber", PagesNumber.ToString());
-               writer.WriteElementString("Honorarium", Honorarium.ToString());          
+               writer.WriteElementString("Title", _title);
+               writer.WriteElementString("PagesNumber", _pagesNumber.ToString());
+               writer.WriteElementString("Honorarium", _honorarium.ToString());          
            writer.WriteEndElement();
         }
 

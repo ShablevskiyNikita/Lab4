@@ -142,8 +142,8 @@ namespace Lab4
         public void WriteXml(XmlWriter writer)
         { 
             writer.WriteStartElement("Journal");
-            writer.WriteElementString("Name", Name);
-            writer.WriteElementString("Periodicity", JournalPeriodicity.ToString());
+            writer.WriteElementString("Name", _name);
+            writer.WriteElementString("Periodicity", _periodicity.ToString());
             writer.WriteStartElement("Articles");
             if(Articles != null)
             {

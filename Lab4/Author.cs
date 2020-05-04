@@ -117,9 +117,9 @@ namespace Lab4
         public void WriteXml(XmlWriter writer)
         {          
             writer.WriteStartElement("Author");
-            writer.WriteElementString("FirstName", FirstName);
-            writer.WriteElementString("LastName", LastName);
-            writer.WriteElementString("Birthday", Birthday.ToString());           
+            writer.WriteElementString("FirstName", _firstName);
+            writer.WriteElementString("LastName", _lastName);
+            writer.WriteElementString("Birthday", _birthday.ToString());           
             writer.WriteEndElement();
         }
 
