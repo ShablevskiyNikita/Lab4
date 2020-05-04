@@ -44,7 +44,6 @@ namespace Lab4
 
         public void ReadXml(XmlReader reader)
         {
-            //firstName and lastName doesn`t read
             reader.MoveToContent();           
             while (reader.Read())
             {
