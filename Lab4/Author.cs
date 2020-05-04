@@ -78,25 +78,28 @@ namespace Lab4
         public static List<Author> ReadAuthorsList(string fileName)
         {
             List<Author> authors = new List<Author>();
-            using (XmlReader reader = XmlReader.Create(fileName))
+            if (File.Exists(fileName))
             {
-                //jump from root tag
-                reader.MoveToContent();
-                while (reader.Read())
+                using (XmlReader reader = XmlReader.Create(fileName))
                 {
-                    //if we reach closed tag @articles@ we can make stop
-                    if (reader.IsStartElement() && !reader.Name.Equals("Authors"))
+                    //jump from root tag
+                    reader.MoveToContent();
+                    while (reader.Read())
                     {
-                        Author author = new Author();
-                        author.ReadXml(reader);
-                        authors.Add(author);
+                        //if we reach closed tag @articles@ we can make stop
+                        if (reader.IsStartElement() && !reader.Name.Equals("Authors"))
+                        {
+                            Author author = new Author();
+                            author.ReadXml(reader);
+                            authors.Add(author);
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }          
+                }               
+            }
             return authors;
         }
 

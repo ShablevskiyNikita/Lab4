@@ -118,24 +118,26 @@ namespace Lab4
         public static List<Journal> ReadJournalList(string fileName)
         {
             List<Journal> journals = new List<Journal>();
-            using (XmlReader reader = XmlReader.Create(fileName))
+            if(File.Exists(fileName))
             {
-                reader.MoveToContent();
-                while (reader.Read())
+                using (XmlReader reader = XmlReader.Create(fileName))
                 {
-                    if(reader.IsStartElement() && !reader.Name.Equals("Journals"))
+                    reader.MoveToContent();
+                    while (reader.Read())
                     {
-                        Journal journal = new Journal();
-                        journal.ReadXml(reader);
-                        journals.Add(journal);
-                    }
-                    else
-                    {
-                        break;
+                        if (reader.IsStartElement() && !reader.Name.Equals("Journals"))
+                        {
+                            Journal journal = new Journal();
+                            journal.ReadXml(reader);
+                            journals.Add(journal);
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
-            }
-               
+            }                          
             return journals;
         }
       
