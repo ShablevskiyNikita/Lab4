@@ -106,7 +106,7 @@ namespace Lab4
             if (!regexGroupFormat.IsMatch(honorarium_textBox.Text))
             {
                 e.Cancel = true;
-                MessageBox.Show("Honorarium must be an integer number!");
+                MessageBox.Show("Honorarium must be a number(100 or 10,60)!");
             }
         }
 
