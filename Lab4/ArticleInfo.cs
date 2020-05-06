@@ -117,6 +117,11 @@ namespace Lab4
                 MessageBox.Show("You need to choose author!");
                 return;
             }
+            if(title_textBox.Text == "" || pagesNumber_textBox.Text == "" || honorarium_textBox.Text == "")
+            {
+                MessageBox.Show("You need to fill empty fields!");
+                return;
+            }
             articleInfo.ArticleAuthor = authors[selectedIndex];
             articleInfo.Title = title_textBox.Text;
             articleInfo.PagesNumber = int.Parse(pagesNumber_textBox.Text);
