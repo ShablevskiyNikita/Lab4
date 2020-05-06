@@ -94,9 +94,13 @@ namespace Lab4
 
         private void save_button_Click(object sender, EventArgs e)
         {           
-            journalInfo.Name = journal_name.Text;
-            journalInfo.JournalPeriodicity = (Periodicity)Enum.Parse(typeof(Periodicity), periodicity_comboBox.SelectedItem.ToString());
-            journalInfo.Articles = journalInfo.Articles != null ? journalInfo.Articles : null;
+            journalInfo.Name = journal_name.Text;           
+            if (periodicity_comboBox.SelectedItem == null)
+            {
+                MessageBox.Show("You need to choose periodicity!");
+                return;
+            }
+            journalInfo.JournalPeriodicity = (Periodicity)Enum.Parse(typeof(Periodicity), periodicity_comboBox.SelectedItem.ToString());        
             DialogResult = DialogResult.OK;
         }
 
