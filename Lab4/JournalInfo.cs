@@ -95,9 +95,9 @@ namespace Lab4
         private void save_button_Click(object sender, EventArgs e)
         {           
             journalInfo.Name = journal_name.Text;           
-            if (periodicity_comboBox.SelectedItem == null)
+            if (periodicity_comboBox.SelectedItem == null || journal_name.Text == "")
             {
-                MessageBox.Show("You need to choose periodicity!");
+                MessageBox.Show("You need to fill empty fields!");
                 return;
             }
             journalInfo.JournalPeriodicity = (Periodicity)Enum.Parse(typeof(Periodicity), periodicity_comboBox.SelectedItem.ToString());        

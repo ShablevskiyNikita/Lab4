@@ -29,7 +29,12 @@ namespace Lab4
         }
 
         private void save_button_Click(object sender, EventArgs e)
-        {          
+        {
+            if(firstName_textBox.Text =="" || lastName_textBox.Text == "")
+            {
+                MessageBox.Show("You need to fill emply values!");
+                return;
+            }
             authorInfo.FirstName = firstName_textBox.Text;
             authorInfo.LastName = lastName_textBox.Text;
             authorInfo.Birthday = birthday_dateTimePicker.Value;              
