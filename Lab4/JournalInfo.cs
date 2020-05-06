@@ -29,7 +29,7 @@ namespace Lab4
             {
                 periodicity_comboBox.SelectedIndex = periodicity_comboBox.Items.IndexOf(journal.JournalPeriodicity.ToString());
                 journal_name.Text = journal.Name;
-                journalInfo.CalculatePages();
+                journalInfo.CalculatePagesAndAuthors();
                 total_pages_label.Text = journal.TotalPagesNumber.ToString();
                 if (journal.Articles != null)
                 {
@@ -55,7 +55,7 @@ namespace Lab4
             if (articleModal.ShowDialog() == DialogResult.OK)
             {
                 articles_list.Items[selectedIndex] = journalInfo.Articles[selectedIndex].ToString();
-                journalInfo.CalculatePages();
+                journalInfo.CalculatePagesAndAuthors();
                 total_pages_label.Text = journalInfo.TotalPagesNumber.ToString();
             }
             else
@@ -71,7 +71,7 @@ namespace Lab4
             if (articleModal.ShowDialog() == DialogResult.OK)
             {
                 journalInfo.AddArticle(newArticle);
-                journalInfo.CalculatePages();
+                journalInfo.CalculatePagesAndAuthors();
                 articles_list.Items.Add(newArticle.ToString());
                 total_pages_label.Text = journalInfo.TotalPagesNumber.ToString();
             }

@@ -58,15 +58,7 @@ namespace Lab4
             set
             {
                 _articles = value;
-                totalPagesNumber = 0;
-                if (_articles != null)
-                {                    
-                    _articles.ForEach(article =>
-                    {
-                        totalPagesNumber += article.PagesNumber;
-                    });
-                    authorsNumber = _articles.Count;
-                }
+                CalculatePagesAndAuthors();
             }           
         }
 
@@ -84,6 +76,7 @@ namespace Lab4
 
         public void AddArticle(Article article)
         {
+            // we can set null by List<Article> Articles setter
             if (_articles == null)
             {
                 _articles = new List<Article>();
@@ -93,10 +86,18 @@ namespace Lab4
             authorsNumber++;
         }
 
-        public void CalculatePages()
-        {
+        public void CalculatePagesAndAuthors()
+        {           
             totalPagesNumber = 0;
-            _articles.ForEach(article => totalPagesNumber += article.PagesNumber);
+            authorsNumber = 0;
+            if (_articles != null)
+            {
+                _articles.ForEach(article =>
+                {
+                    totalPagesNumber += article.PagesNumber;
+                });
+                authorsNumber = _articles.Count;
+            }
         }     
 
         public XmlSchema GetSchema()
@@ -125,7 +126,7 @@ namespace Lab4
 
                         case "Articles":                           
                             _articles = Article.ReadArticles(reader);
-                            CalculatePages();
+                            CalculatePagesAndAuthors();
                             break;
                     }
                 }
