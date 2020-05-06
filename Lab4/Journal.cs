@@ -27,23 +27,38 @@ namespace Lab4
 
         public string Name
         {
-            get => _name;
-            set => _name = value;
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
         }
 
         public Periodicity JournalPeriodicity
         {
-            get => (Periodicity)_periodicity;
-            set => _periodicity = value;
+            get
+            {
+                return (Periodicity)_periodicity;
+            }
+            set
+            {
+                _periodicity = value;
+            }            
         }
 
         public List<Article> Articles
         {
-            get => _articles;
+            get
+            {
+                return _articles;
+            }
             set
             {
                 _articles = value;
-                if(_articles != null)
+                if (_articles != null)
                 {
                     totalPagesNumber = 0;
                     _articles.ForEach(article =>
@@ -51,14 +66,20 @@ namespace Lab4
                         totalPagesNumber += article.PagesNumber;
                     });
                     authorsNumber = _articles.Count;
-                }               
-            }
+                }
+            }           
         }
 
         public int TotalPagesNumber
         {
-            get => totalPagesNumber;
-            set => totalPagesNumber = value;
+            get
+            {
+                return totalPagesNumber;
+            }
+            set
+            {
+                totalPagesNumber = value;
+            }
         }
 
         public void AddArticle(Article article)
