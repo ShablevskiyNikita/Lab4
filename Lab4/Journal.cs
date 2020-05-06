@@ -58,9 +58,9 @@ namespace Lab4
             set
             {
                 _articles = value;
+                totalPagesNumber = 0;
                 if (_articles != null)
-                {
-                    totalPagesNumber = 0;
+                {                    
                     _articles.ForEach(article =>
                     {
                         totalPagesNumber += article.PagesNumber;
