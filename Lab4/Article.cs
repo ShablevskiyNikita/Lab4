@@ -23,26 +23,50 @@ namespace Lab4
      
         public Author ArticleAuthor
         {
-            get => _articleAuthor;
-            set => _articleAuthor = value;
+            get
+            {
+                return _articleAuthor;
+            }
+            set
+            {
+                _articleAuthor = value;
+            }               
         }
 
         public string Title
         {
-            get => _title;
-            set => _title = value;
+            get
+            {
+               return _title;
+            }
+            set
+            {
+                _title = value;
+            }
         }
 
         public int PagesNumber
         {
-            get => _pagesNumber;
-            set => _pagesNumber = value;
+            get
+            {
+                return _pagesNumber;
+            }
+            set
+            {
+                _pagesNumber = value;
+            }                
         }
 
         public double Honorarium
         {
-            get => _honorarium;
-            set => _honorarium = value;
+            get
+            {
+                return _honorarium;
+            }
+            set
+            {
+                _honorarium = value;
+            }
         }
        
         public XmlSchema GetSchema()
