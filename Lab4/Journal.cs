@@ -37,11 +37,11 @@ namespace Lab4
             }
         }
 
-        public Periodicity JournalPeriodicity
+        public Periodicity? JournalPeriodicity
         {
             get
             {
-                return (Periodicity)_periodicity;
+                return _periodicity;
             }
             set
             {

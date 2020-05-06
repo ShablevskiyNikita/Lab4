@@ -25,7 +25,7 @@ namespace Lab4
             {
                 periodicity_comboBox.Items.Add(periodicity.ToString());
             }            
-            if(journalInfo != null && journalInfo.Name != null )
+            if(journalInfo != null && journalInfo.Name != null && journal.JournalPeriodicity != null)
             {
                 periodicity_comboBox.SelectedIndex = periodicity_comboBox.Items.IndexOf(journal.JournalPeriodicity.ToString());
                 journal_name.Text = journal.Name;
