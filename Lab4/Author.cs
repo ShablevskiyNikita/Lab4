@@ -22,19 +22,37 @@ namespace Lab4
 
         public string FirstName
         {
-            get => _firstName;
-            set => _firstName = value;
+            get
+            {
+                return _firstName;
+            }
+            set
+            {
+                _firstName = value;
+            }
         }
 
         public string LastName
         {
-            get => _lastName;
-            set => _lastName = value;
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                _lastName = value;
+            } 
         }
 
         public DateTime Birthday {
-            get => _birthday;
-            set => _birthday = value;
+            get
+            {
+                return _birthday;
+            }
+            set
+            {
+                _birthday = value;
+            }
         }      
 
         public XmlSchema GetSchema()
