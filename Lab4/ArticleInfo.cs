@@ -71,7 +71,6 @@ namespace Lab4
                 authors_comboBox.Items.Add(newAuthor.ToString());
                 authors.Add(newAuthor);
                 Author.WriteAuthorsToFile("authors", authors);
-                newAuthor.Append("authors");
             }   
             else
             {

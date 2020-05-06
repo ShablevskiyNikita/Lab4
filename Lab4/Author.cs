@@ -101,21 +101,7 @@ namespace Lab4
             }
             return authors;
         }
-
-        public void Append(string fileName)
-        {
-            XDocument xDocument = XDocument.Load(fileName);
-            XElement root = xDocument.Element("Authors");
-            IEnumerable<XElement> rows = root.Descendants("Author");
-            XElement firstRow = rows.First();
-            firstRow.AddBeforeSelf(
-               new XElement("Author",
-               new XElement("FirstName", _firstName),
-               new XElement("LastName", _lastName),
-               new XElement("Birthday", _birthday.ToString())));
-            xDocument.Save(fileName);
-        }
-
+       
         public void WriteXml(XmlWriter writer)
         {          
             writer.WriteStartElement("Author");
