@@ -131,7 +131,7 @@ namespace Lab4
 
         public static void WriteAuthorsToFile(string fileName,List<Author> authors)
         {
-            XmlWriterSettings settings = new XmlWriterSettings();//пропуск кореневих атрибутів
+            XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.OmitXmlDeclaration = false;
             settings.NewLineOnAttributes = true;

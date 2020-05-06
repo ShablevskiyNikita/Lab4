@@ -20,19 +20,8 @@ namespace Lab4
             edit_button.Enabled = false;
             showInfo_button.Enabled = false;
             delete_button.Enabled = false;
-
-            List<Journal> journalsXMLinfo = Journal.ReadJournalList("journals");
-            if (journalsXMLinfo != null)
-            {
-                journalsXMLinfo.ForEach(journal =>
-                {
-                    journals.Add(journal);
-                });
-            }
-            else
-            {
-                journals = new List<Journal>();
-            }
+            
+            journals = Journal.ReadJournalList("journals");           
             journals.ForEach(journalListInfo =>
             {
                 journals_List.Items.Add(journalListInfo.ToShortString());

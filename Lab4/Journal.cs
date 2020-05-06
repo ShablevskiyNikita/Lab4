@@ -181,7 +181,7 @@ namespace Lab4
 
         public static  void WriteJournalsToFile(string fileName, List<Journal> journals)
         {
-            XmlWriterSettings settings = new XmlWriterSettings();//пропуск кореневих атрибутів
+            XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.OmitXmlDeclaration = false;
             settings.NewLineOnAttributes = true;
