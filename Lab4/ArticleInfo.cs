@@ -111,7 +111,13 @@ namespace Lab4
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            articleInfo.ArticleAuthor = authors[authors_comboBox.SelectedIndex];
+            int selectedIndex = authors_comboBox.SelectedIndex;
+            if (selectedIndex < 0 || selectedIndex >= authors.Count)
+            {
+                MessageBox.Show("You need to choose author!");
+                return;
+            }
+            articleInfo.ArticleAuthor = authors[selectedIndex];
             articleInfo.Title = title_textBox.Text;
             articleInfo.PagesNumber = int.Parse(pagesNumber_textBox.Text);
             articleInfo.Honorarium = double.Parse(honorarium_textBox.Text);
